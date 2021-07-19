@@ -19,18 +19,13 @@ if (isset($_POST['submit'])) {
 	if ($result->num_rows > 0) {
 		$row = mysqli_fetch_assoc($result);
 
-		if($row['username'] == 'admin'){
+		if($row['level'] == '0'){
 			$_SESSION['admin']=$user;
 			echo '<script language="javascript">alert("Anda berhasil Login Admin!"); document.location="admin/index.php";</script>';
 		}else{
             $_SESSION['guest']=$user;
 			echo '<script language="javascript">alert("Anda berhasil Login Guest!"); document.location="guest/index.php";</script>';
 		}
-
-
-
-		// $_SESSION['username'] = $row['username'];
-		// header("Location: welcome.php");
 	} else {
 		echo "<script>alert('Woops! Email or Password is Wrong.')</script>";
 	}
@@ -48,7 +43,6 @@ if (isset($_POST['submit'])) {
 
 	<link rel="stylesheet" type="text/css" href="style.css">
 
-	<title>Login Form - Pure Coding</title>
 </head>
 <body>
 	<div class="container">
