@@ -6,9 +6,6 @@ session_start();
 
 error_reporting(0);
 
-if (isset($_SESSION['username'])) {
-    header("Location: welcome.php");
-}
 
 if (isset($_POST['submit'])) {
 	$email = $_POST['email'];
@@ -19,11 +16,11 @@ if (isset($_POST['submit'])) {
 	if ($result->num_rows > 0) {
 		$row = mysqli_fetch_assoc($result);
 
-		if($row['level'] == '0'){
-			$_SESSION['admin']=$user;
+		if($row['level'] == 'admin'){
+			$_SESSION['admin']=$row['username'];
 			echo '<script language="javascript">alert("Anda berhasil Login Admin!"); document.location="admin/index.php";</script>';
 		}else{
-            $_SESSION['guest']=$user;
+            $_SESSION['guest']=$row['username'];
 			echo '<script language="javascript">alert("Anda berhasil Login Guest!"); document.location="guest/index.php";</script>';
 		}
 	} else {
@@ -57,6 +54,7 @@ if (isset($_POST['submit'])) {
 			<div class="input-group">
 				<button name="submit" class="btn">Login</button>
 			</div>
+			
 			<p class="login-register-text">Don't have an account? <a href="register.php">Register Here</a>.</p>
 		</form>
 	</div>

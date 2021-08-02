@@ -1,8 +1,26 @@
-<?php include('akses.php'); ?>
+<?php include('akses.php'); 
+session_start();
+
+if (!isset($_SESSION['guest'])) {
+    header("Location: index.php");
+}
+?>
+
 <html>
 <head>
-	<title>Guest Area | tutorialweb.net</title>
+	<title>Guest Area </title>
 </head>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" type="text/css" href="../style.css">
+
+</head>
+
 <body>
  
 	<div style="text-align:center">
@@ -14,3 +32,7 @@
  
 </body>
 </html>
+
+<?php 
+
+?>

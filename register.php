@@ -19,15 +19,15 @@ if (isset($_POST['submit'])) {
 	if ($password == $cpassword) {
 		$sql = "SELECT * FROM users WHERE email='$email'";
 		$result = mysqli_query($conn, $sql);
-		$level = 1;
 		if (!$result->num_rows > 0) {
-			$sql = "INSERT INTO users (username, email, password, level)
-					VALUES ('$username', '$email', '$password', $level)";
+			$sql = "INSERT INTO users (username, email, address, password)
+					VALUES ('$username', '$email','$address', '$password')";
 			$result = mysqli_query($conn, $sql);
 			if ($result) {
 				echo "<script>alert('Wow! User Registration Completed.')</script>";
 				$username = "";
 				$email = "";
+				$address = "";
 				$_POST['password'] = "";
 				$_POST['cpassword'] = "";
 			} else {
@@ -65,6 +65,9 @@ if (isset($_POST['submit'])) {
 			</div>
 			<div class="input-group">
 				<input type="email" placeholder="Email" name="email" value="<?php echo $email; ?>" required>
+			</div>
+			<div class="input-group">
+				<input type="address" placeholder="Address" name="address" value="<?php echo $address; ?>" required>
 			</div>
 			<div class="input-group">
 				<input type="password" placeholder="Password" name="password" value="<?php echo $_POST['password']; ?>" required>

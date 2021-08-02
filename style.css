@@ -21,7 +21,7 @@ body {
 th, td {
     padding: 15px;
   }
-  
+
 .container {
     width: 400px;
     min-height: 400px;
@@ -29,6 +29,16 @@ th, td {
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0,0,0,.3);
     padding: 40px 30px;
+}
+
+.container .edit-text {
+    color: #111;
+    font-weight: 500;
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 20px;
+    display: block;
+    text-transform: capitalize;
 }
 
 .container .login-text {
@@ -170,13 +180,13 @@ th, td {
   
   /* Change background color of buttons on hover */
   .tab button:hover {
-    background-color: #A49393
+    background-color: #c9b9b9
     ;
   }
   
   /* Create an active/current "tab button" class */
   .tab button.active {
-    background-color: #c9b9b9;
+    background-color: #A49393;
   }
   
   /* Style the tab content */
