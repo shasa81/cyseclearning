@@ -30,7 +30,7 @@ if(isset($_GET['del']) && isset($_GET['username']))
       </div>
       
       <div>
-        <table bgcolor=white id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
+        <table bgcolor=#EED6D3 id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
           <thead>
             <tr>
               <th>#</th>

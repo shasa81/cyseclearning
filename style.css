@@ -18,6 +18,10 @@ body {
     align-items: center;
 }
 
+h2{
+    color: #EED6D3
+}
+
 th, td {
     padding: 15px;
   }
